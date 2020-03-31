@@ -1,15 +1,24 @@
 import subprocess
+from multiprocessing.managers import BaseManager
 
 from flask import Flask
+
+import picam
 
 app = Flask(__name__)
 
 @app.route('/picam/start')
 def start():
-    subprocess.run('sudo /etc/init.d/picam start')
+    manager = BaseManager(('', 37844), b'password')
+    manager.register('get_picam_process')
+    manager.connect()
+    manager.get_picam_process(picam.start)
     return "Success!"
 
 @app.route('/picam/stop')
 def stop():
-    subprocess.run('sudo /etc/init.d/picam stop')
+    manager = BaseManager(('', 37844), b'password')
+    manager.register('get_picam_process')
+    manager.connect()
+    manager.get_picam_process().kill()
     return "Success!"
