@@ -2,7 +2,7 @@ import os
 import subprocess
 
 PICAM_DIR = '/home/pi/picam'
-SHM_DIR = '/run/shm'
+SHM_DIR = '/run/shm2'
 USE_DIRS = ['rec', 'hooks', 'state', 'archive']
 
 def make_dirs():
