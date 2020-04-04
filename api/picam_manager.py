@@ -7,11 +7,11 @@ lock = Lock()
 picam_process = Popen(['/home/pi/picam/picam', '--version'])
 
 def get_picam_process(start_func=None):
+    global picam_process
     with lock:
         if picam_process.poll() is None:
             return picam_process
         else:
-            global picam_process
             picam_process = start_func()
             return picam_process
 
