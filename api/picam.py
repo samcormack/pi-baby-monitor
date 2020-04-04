@@ -17,6 +17,7 @@ def make_dirs():
 
 def start():
     command = [
+        'sudo',
         os.path.join(PICAM_DIR, 'picam'),
         '-o', os.path.join(SHM_DIR, 'hls'),
         '--vfr',
