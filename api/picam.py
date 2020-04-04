@@ -32,7 +32,9 @@ def start():
         'plug:dmic_hw',
         '--volume',
         '10',
-        '> /var/log/picam.log 2&>1'
+        '>',
+        '/var/log/picam.log',
+        '2&>1'
     ]
     make_dirs()
     return subprocess.Popen(command, cwd=PICAM_DIR)
