@@ -21,12 +21,17 @@ def start():
         '-o', os.path.join(SHM_DIR, 'hls'),
         '--vfr',
         '--autoex',
-        '--rotation 270',
-        '--samplerate 48000',
-        '--channels 2',
+        '--rotation',
+        '270',
+        '--samplerate',
+        '48000',
+        '--channels',
+        '2',
         '--time',
-        '--alsadev plug:dmic_hw',
-        '--volume 10',
+        '--alsadev',
+        'plug:dmic_hw',
+        '--volume',
+        '10',
         '> /var/log/picam.log 2&>1'
     ]
     make_dirs()
