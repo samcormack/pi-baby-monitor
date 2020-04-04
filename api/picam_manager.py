@@ -11,7 +11,8 @@ def get_picam_process(start_func=None):
         if picam_process.poll() is None:
             return picam_process
         else:
-            global picam_process = start_func()
+            global picam_process
+            picam_process = start_func()
             return picam_process
 
 
