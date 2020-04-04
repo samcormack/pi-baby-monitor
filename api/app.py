@@ -22,3 +22,6 @@ def stop():
     manager.connect()
     manager.get_picam_process().kill()
     return "Success!"
+
+if __name__=='__main__':
+    app.run()

@@ -13,7 +13,7 @@ def make_dirs():
             '-sfn',
             os.path.join(SHM_DIR, dirname),
             os.path.join(PICAM_DIR, dirname)
-        )
+        ])
 
 def start():
     command = [
