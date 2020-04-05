@@ -18,7 +18,7 @@ def make_dirs():
 def start():
     command = [
         os.path.join(PICAM_DIR, 'picam'),
-        '-o', os.path.join(SHM_DIR, 'hls'),
+        '-o', os.path.join(SHM_DIR, 'hls-py'),
         '--vfr',
         '--autoex',
         '--rotation',
